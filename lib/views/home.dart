@@ -1,55 +1,37 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:travel_app/views/detail.dart';
 import 'package:travel_app/model/travel_list.dart';
 import 'package:travel_app/views/menu.dart';
+import 'package:travel_app/views/search.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const Drawer(
+        child: NavigationDrawer(),
+      ),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: IconButton(
-          padding: EdgeInsets.all(10),
-          icon: const Icon(Icons.menu_outlined, color: Colors.black),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Menu();
-            }));
-          },
+        iconTheme: const IconThemeData(color: Colors.black),
+        centerTitle: true,
+        title: const Text(
+          "TravelApps",
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w800),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              "images/logo.jpg",
-              height: 80,
-            ),
-            const Text(
-              "TravelApps",
-              style:
-                  TextStyle(color: Colors.black87, fontWeight: FontWeight.w800),
-            ),
-            const Icon(Icons.search)
-          ],
-        ),
-        actions: <Widget>[
-          IconButton(
-            padding: EdgeInsets.all(10),
-            icon: const Icon(Icons.search, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
+        // actions: <Widget>[
+        //   IconButton(
+        //     padding: const EdgeInsets.all(10),
+        //     icon: const Icon(Icons.search, color: Colors.black),
+        //     onPressed: () {
+        //       Navigator.of(context).push(
+        //           MaterialPageRoute(builder: (context) => const Search()));
+        //     },
+        //   ),
+        // ],
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
@@ -84,8 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ListTile(
                     title: Text(
                       travel.name,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                     subtitle: Text(
                       "Jadwal Keberangkatan ${travel.date}",
@@ -93,14 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Rp. ${travel.price}",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 18)),
-                        Icon(Icons.bookmark_border),
+                        const Icon(Icons.bookmark_border),
                       ],
                     ),
                   )

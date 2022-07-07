@@ -1,6 +1,7 @@
 import 'package:travel_app/views/artikel.dart';
 import 'package:travel_app/views/home.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/views/shop/shop.dart';
 import 'package:travel_app/views/transaksi.dart';
 
 class Landing extends StatefulWidget {
@@ -15,6 +16,7 @@ class _LandingState extends State<Landing> {
   final List<Widget> _container = [
     const HomeScreen(),
     const Artikel(),
+    const Shop(),
     const Transaksi(),
   ];
 
@@ -23,6 +25,7 @@ class _LandingState extends State<Landing> {
     return Scaffold(
       body: _container[_bottomNavIndex],
       bottomNavigationBar: BottomNavigationBar(
+          selectedFontSize: 12,
           fixedColor: Colors.amber[800],
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
@@ -52,6 +55,16 @@ class _LandingState extends State<Landing> {
                   color: Colors.grey,
                 ),
                 label: "Artikel"),
+            BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.shopping_basket_outlined,
+                  color: Colors.amber[800],
+                ),
+                icon: const Icon(
+                  Icons.shopping_basket_outlined,
+                  color: Colors.grey,
+                ),
+                label: "Belanja"),
             BottomNavigationBarItem(
                 activeIcon: Icon(
                   Icons.wallet_rounded,

@@ -14,16 +14,10 @@ class Transaksi extends StatelessWidget {
           icon: const Icon(Icons.bookmark, color: Colors.black),
           onPressed: () {},
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              "Riwayat Transaksi",
-              style:
-                  TextStyle(color: Colors.black87, fontWeight: FontWeight.w800),
-            ),
-            Icon(Icons.search)
-          ],
+        centerTitle: true,
+        title: const Text(
+          "Riwayat Transaksi",
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w800),
         ),
         actions: <Widget>[
           IconButton(
