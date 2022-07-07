@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/views/detail.dart';
 import 'package:travel_app/model/travel_list.dart';
 import 'package:travel_app/views/menu.dart';
-import 'package:travel_app/views/search.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

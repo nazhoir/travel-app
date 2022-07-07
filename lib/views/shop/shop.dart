@@ -18,9 +18,9 @@ class Shop extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         title: ListTile(
-          contentPadding: EdgeInsets.all(0),
-          leading: Icon(Icons.search),
-          title: TextField(
+          contentPadding: const EdgeInsets.all(0),
+          leading: const Icon(Icons.search),
+          title: const TextField(
             // controller: controller,
             // onChanged: onSearch,
             decoration:
@@ -31,7 +31,7 @@ class Shop extends StatelessWidget {
               // controller.clear();
               // onSearch('');
             },
-            icon: Icon(Icons.cancel),
+            icon: const Icon(Icons.cancel),
           ),
         ),
         actions: <Widget>[
@@ -124,7 +124,7 @@ class Shop extends StatelessWidget {
                                       vertical: 5, horizontal: 13),
                                   child: Text(
                                     "Diskon: ${product.discount}%",
-                                    style: TextStyle(color: Colors.white),
+                                    style: const TextStyle(color: Colors.white),
                                   ),
                                 ),
                               ),
@@ -151,7 +151,7 @@ class Shop extends StatelessWidget {
                                         (product.discount / 100) *
                                             product.price,
                                     0),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.w800,
                                   fontSize: 16,
                                 ),
@@ -159,7 +159,7 @@ class Shop extends StatelessWidget {
                             if (product.discount == 0)
                               Text(
                                 CurrencyFormat.convertToIdr(product.price, 0),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.w800,
                                   fontSize: 16,
                                 ),
@@ -180,14 +180,14 @@ class Shop extends StatelessWidget {
                 ),
                 const Spacer(),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  margin: EdgeInsets.only(bottom: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  margin: const EdgeInsets.only(bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.star,
                             size: 16,
                           ),
