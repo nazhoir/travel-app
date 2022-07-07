@@ -42,14 +42,14 @@ class Transaksi extends StatelessWidget {
                   Container(
                     color: Colors.green,
                     child: ListTile(
-                      leading: Icon(Icons.local_mall_outlined),
-                      title: Text("Belanja"),
+                      leading: const Icon(Icons.local_mall_outlined),
+                      title: const Text("Belanja"),
                       subtitle: Text(transaksi.date),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          if (transaksi.status == 1) Text("Selesai"),
-                          Icon(Icons.more_vert)
+                          if (transaksi.status == 1) const Text("Selesai"),
+                          const Icon(Icons.more_vert)
                         ],
                       ),
                     ),
