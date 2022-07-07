@@ -269,7 +269,7 @@ class Product extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(child: Icon(Icons.horizontal_rule)),
+                const Center(child: Icon(Icons.horizontal_rule)),
                 ListTile(
                   title: Expanded(
                     child: Row(
