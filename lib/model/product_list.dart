@@ -1,12 +1,12 @@
 class ProductList {
-  String name;
-  String image;
-  String desc;
-  int price;
-  int discount;
-  int stock;
-  int sold;
-  int rating;
+  final String name;
+  final String image;
+  final String desc;
+  final int price;
+  final int discount;
+  final int stock;
+  final int sold;
+  final int rating;
 
   ProductList({
     required this.name,
@@ -18,6 +18,18 @@ class ProductList {
     required this.sold,
     required this.rating,
   });
+
+  // factory ProductList.formJson(Map<String, dynamic> json) {
+  //   return ProductList(
+  //       name: json['name'],
+  //       image: json['image'],
+  //       price: json['price'],
+  //       discount: json['discount'],
+  //       desc: json['desc'],
+  //       stock: json['stock'],
+  //       sold: json['sold'],
+  //       rating: json['rating']);
+  // }
 }
 
 var productList = [

@@ -16,7 +16,7 @@ class NavigationDrawer extends StatelessWidget {
         ),
       );
   Widget buildHeader(BuildContext context) => ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(20)),
         child: Container(
           color: Colors.amber[800],
           padding: EdgeInsets.only(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/model/product_list.dart';
 import 'package:travel_app/views/currency.dart';
+import 'package:travel_app/views/shop/product_detail.dart';
 
 import '../menu.dart';
 
@@ -17,22 +18,22 @@ class Shop extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
         backgroundColor: Colors.white,
-        title: ListTile(
-          contentPadding: const EdgeInsets.all(0),
-          leading: const Icon(Icons.search),
-          title: const TextField(
+        title: const ListTile(
+          contentPadding: EdgeInsets.all(0),
+          leading: Icon(Icons.search),
+          title: TextField(
             // controller: controller,
             // onChanged: onSearch,
             decoration:
                 InputDecoration(hintText: "Search", border: InputBorder.none),
           ),
-          trailing: IconButton(
-            onPressed: () {
-              // controller.clear();
-              // onSearch('');
-            },
-            icon: const Icon(Icons.cancel),
-          ),
+          // trailing: IconButton(
+          //   onPressed: () {
+          //     // controller.clear();
+          //     // onSearch('');
+          //   },
+          //   icon: const Icon(Icons.cancel),
+          // ),
         ),
         actions: <Widget>[
           Builder(
@@ -40,7 +41,7 @@ class Shop extends StatelessWidget {
               return IconButton(
                 icon: const Icon(
                   Icons.share_outlined,
-                  size: 30,
+                  size: 25,
                 ),
                 onPressed: () {},
               );
@@ -51,7 +52,7 @@ class Shop extends StatelessWidget {
               return IconButton(
                 icon: const Icon(
                   Icons.shopping_cart_outlined,
-                  size: 30,
+                  size: 25,
                 ),
                 onPressed: () {},
               );
@@ -62,7 +63,7 @@ class Shop extends StatelessWidget {
               return IconButton(
                 icon: const Icon(
                   Icons.menu,
-                  size: 30,
+                  size: 25,
                 ),
                 onPressed: () {
                   Scaffold.of(context).openEndDrawer();
@@ -98,7 +99,18 @@ class Shop extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Product(
+                            productList: product,
+                          );
+                        },
+                      ),
+                    );
+                  },
                   child: Column(
                     children: [
                       Image.network(
