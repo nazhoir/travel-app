@@ -2,7 +2,7 @@ import 'package:travel_app/views/artikel.dart';
 import 'package:travel_app/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/views/shop/shop.dart';
-import 'package:travel_app/views/transaksi.dart';
+import 'package:travel_app/views/shop/transaksi.dart';
 
 class Landing extends StatefulWidget {
   const Landing({Key? key}) : super(key: key);
