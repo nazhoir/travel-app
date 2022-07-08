@@ -50,7 +50,7 @@ var transaksiList = [
       price: 20000,
       image:
           "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//94/MTA-40267317/siaga_satu_air_zam_zam_5_liter_full01_kd5f5deg.jpg",
-      status: 1,
+      status: 2,
       amount: 2,
       totalSpending: 40000,
       date: "12/12/2002"),

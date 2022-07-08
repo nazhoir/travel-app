@@ -38,42 +38,67 @@ class Transaksi extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 clipBehavior: Clip.antiAlias,
-                // margin: const EdgeInsets.only(top: 10),
-                // elevation: 0,
                 child: Column(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.amber[200],
-                        // border: Border.all(width: 2, color: Colors.black),
+                    ListTile(
+                      leading: const Icon(Icons.local_mall_outlined),
+                      title: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Belanja",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            transaksi.date,
+                            style: const TextStyle(fontSize: 12),
+                          )
+                        ],
                       ),
-                      // color: Colors.green,
-                      child: ListTile(
-                        // isThreeLine: true,
-                        leading: const Icon(Icons.local_mall_outlined),
-                        title: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Belanja",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          //
+                          // Cek Status Selesai
+                          if (transaksi.status == 1)
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.green[400],
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5))),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Selesai",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
                             ),
-                            Text(
-                              transaksi.date,
-                              style: const TextStyle(fontSize: 12),
-                            )
-                          ],
-                        ),
-                        // subtitle: Text(transaksi.date),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (transaksi.status == 1) const Text("Selesai"),
-                            const Icon(Icons.more_vert)
-                          ],
-                        ),
+
+                          // Cek Status Pending
+                          if (transaksi.status == 2)
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.amber[600],
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5))),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Pending",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          const Icon(Icons.more_vert)
+                        ],
                       ),
+                    ),
+                    const Divider(
+                      color: Colors.black38,
+                      indent: 10,
+                      endIndent: 10,
                     ),
                     ListTile(
                       onTap: () {

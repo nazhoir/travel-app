@@ -26,9 +26,7 @@ class TransaksiDetail extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        child: Text(transaksiList.name),
-      ),
+      body: Text(transaksiList.name),
     );
   }
 }
