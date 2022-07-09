@@ -291,7 +291,7 @@ class _ProductState extends State<Product> {
               children: [
                 const Center(child: Icon(Icons.horizontal_rule)),
                 ListTile(
-                  title: Expanded(
+                  title: Container(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
