@@ -7,6 +7,7 @@ class ProductList {
   final int stock;
   final int sold;
   final int rating;
+  final int minbuy;
 
   ProductList({
     required this.name,
@@ -17,6 +18,7 @@ class ProductList {
     required this.stock,
     required this.sold,
     required this.rating,
+    required this.minbuy,
   });
 
   // factory ProductList.formJson(Map<String, dynamic> json) {
@@ -43,17 +45,20 @@ var productList = [
     stock: 300,
     sold: 200,
     rating: 5,
+    minbuy: 5,
   ),
   ProductList(
-      name: "Bibit Original Parfum Misik Putih 5ml",
-      image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
-      price: 40000,
-      discount: 0,
-      desc:
-          "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
-      stock: 500,
-      sold: 100,
-      rating: 5),
+    name: "Bibit Original Parfum Misik Putih 5ml",
+    image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
+    price: 40000,
+    discount: 0,
+    desc:
+        "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
+    stock: 500,
+    sold: 100,
+    rating: 5,
+    minbuy: 5,
+  ),
   ProductList(
     name: "Air Zam-Zam 2 Liter",
     image:
@@ -64,17 +69,20 @@ var productList = [
     stock: 300,
     sold: 200,
     rating: 5,
+    minbuy: 5,
   ),
   ProductList(
-      name: "Bibit Original Parfum Misik Putih 5ml",
-      image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
-      price: 40000,
-      discount: 0,
-      desc:
-          "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
-      stock: 500,
-      sold: 100,
-      rating: 5),
+    name: "Bibit Original Parfum Misik Putih 5ml",
+    image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
+    price: 40000,
+    discount: 0,
+    desc:
+        "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
+    stock: 500,
+    sold: 100,
+    rating: 5,
+    minbuy: 5,
+  ),
   ProductList(
     name: "Air Zam-Zam 2 Liter",
     image:
@@ -85,17 +93,20 @@ var productList = [
     stock: 300,
     sold: 200,
     rating: 5,
+    minbuy: 5,
   ),
   ProductList(
-      name: "Bibit Original Parfum Misik Putih 5ml",
-      image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
-      price: 40000,
-      discount: 0,
-      desc:
-          "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
-      stock: 500,
-      sold: 100,
-      rating: 5),
+    name: "Bibit Original Parfum Misik Putih 5ml",
+    image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
+    price: 40000,
+    discount: 0,
+    desc:
+        "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
+    stock: 500,
+    sold: 100,
+    rating: 5,
+    minbuy: 5,
+  ),
   ProductList(
     name: "Air Zam-Zam 2 Liter",
     image:
@@ -106,17 +117,20 @@ var productList = [
     stock: 300,
     sold: 200,
     rating: 5,
+    minbuy: 5,
   ),
   ProductList(
-      name: "Bibit Original Parfum Misik Putih 5ml",
-      image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
-      price: 40000,
-      discount: 0,
-      desc:
-          "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
-      stock: 500,
-      sold: 100,
-      rating: 5),
+    name: "Bibit Original Parfum Misik Putih 5ml",
+    image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
+    price: 40000,
+    discount: 0,
+    desc:
+        "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
+    stock: 500,
+    sold: 100,
+    rating: 5,
+    minbuy: 5,
+  ),
   ProductList(
     name: "Air Zam-Zam 2 Liter",
     image:
@@ -127,17 +141,20 @@ var productList = [
     stock: 300,
     sold: 200,
     rating: 5,
+    minbuy: 5,
   ),
   ProductList(
-      name: "Bibit Original Parfum Misik Putih 5ml",
-      image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
-      price: 40000,
-      discount: 0,
-      desc:
-          "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
-      stock: 500,
-      sold: 100,
-      rating: 5),
+    name: "Bibit Original Parfum Misik Putih 5ml",
+    image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
+    price: 40000,
+    discount: 0,
+    desc:
+        "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
+    stock: 500,
+    sold: 100,
+    rating: 5,
+    minbuy: 5,
+  ),
   ProductList(
     name: "Air Zam-Zam 2 Liter",
     image:
@@ -148,15 +165,18 @@ var productList = [
     stock: 300,
     sold: 200,
     rating: 5,
+    minbuy: 5,
   ),
   ProductList(
-      name: "Bibit Original Parfum Misik Putih 5ml",
-      image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
-      price: 40000,
-      discount: 0,
-      desc:
-          "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
-      stock: 500,
-      sold: 100,
-      rating: 5),
+    name: "Bibit Original Parfum Misik Putih 5ml",
+    image: "https://cf.shopee.co.id/file/afc990ae750a802b41d31f084842a85f",
+    price: 40000,
+    discount: 0,
+    desc:
+        "Parfum dengan aroma tajam pure , tanpa campuran alkohol, untuk pemakaian harus dicampur dulu dengan Alkohol / Ether bisa dengan perbandingan 1 : 3 agar aroma parfum menjadi sempurna, karena aroma parfum terlalu tajam jika di pakai langsung. Namun jika anda penggemar aroma tajam bisa langsung di pakai. Jenis : Misik Putih Vol Minyak : 5 ml Ukuran botol : 6 ml",
+    stock: 500,
+    sold: 100,
+    rating: 5,
+    minbuy: 5,
+  ),
 ];

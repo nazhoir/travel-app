@@ -4,9 +4,28 @@ import 'package:travel_app/model/product_list.dart';
 import '../currency.dart';
 import '../menu.dart';
 
-class Product extends StatelessWidget {
+class Product extends StatefulWidget {
   const Product({Key? key, required this.productList}) : super(key: key);
   final ProductList productList;
+
+  @override
+  State<Product> createState() => _ProductState();
+}
+
+class _ProductState extends State<Product> {
+  int counter = 0;
+
+  void _minCounter() {
+    setState(() {
+      counter--;
+    });
+  }
+
+  _incrementCounter() {
+    setState(() {
+      counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +142,7 @@ class Product extends StatelessWidget {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                        productList.image,
+                        widget.productList.image,
                       ),
                     ),
                   ),
@@ -135,29 +154,30 @@ class Product extends StatelessWidget {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (productList.discount >= 1)
+                  if (widget.productList.discount >= 1)
                     Text(
                       CurrencyFormat.convertToIdr(
-                          productList.price -
-                              (productList.discount / 100) * productList.price,
+                          widget.productList.price -
+                              (widget.productList.discount / 100) *
+                                  widget.productList.price,
                           0),
                       style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 22,
                       ),
                     ),
-                  if (productList.discount == 0)
+                  if (widget.productList.discount == 0)
                     Text(
-                      CurrencyFormat.convertToIdr(productList.price, 0),
+                      CurrencyFormat.convertToIdr(widget.productList.price, 0),
                       style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 22,
                       ),
                     ),
                   // Harga Asli Sebelum Diskon
-                  if (productList.discount >= 1)
+                  if (widget.productList.discount >= 1)
                     Text(
-                      CurrencyFormat.convertToIdr(productList.price, 0),
+                      CurrencyFormat.convertToIdr(widget.productList.price, 0),
                       style: const TextStyle(
                           color: Colors.black45,
                           decoration: TextDecoration.lineThrough),
@@ -165,7 +185,7 @@ class Product extends StatelessWidget {
                 ],
               ),
               subtitle: Text(
-                productList.name,
+                widget.productList.name,
                 style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
@@ -179,7 +199,7 @@ class Product extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.all(16.0),
-              child: Text(productList.desc),
+              child: Text('${widget.productList.minbuy + counter} '),
             ),
           ],
         ),
@@ -193,7 +213,7 @@ class Product extends StatelessWidget {
               children: [
                 ElevatedButton(
                   clipBehavior: Clip.antiAlias,
-                  onPressed: () {},
+                  onPressed: _minCounter,
                   style: ElevatedButton.styleFrom(
                     shadowColor: Colors.white,
                     primary: Colors.amber[900],
@@ -282,7 +302,7 @@ class Product extends StatelessWidget {
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(20)),
                               child: Image.network(
-                                productList.image,
+                                widget.productList.image,
                                 width: 125,
                                 height: 125,
                                 fit: BoxFit.cover,
@@ -297,37 +317,38 @@ class Product extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    if (productList.discount == 0)
+                                    if (widget.productList.discount == 0)
                                       Text(
                                         CurrencyFormat.convertToIdr(
-                                            productList.price, 0),
+                                            widget.productList.price, 0),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18),
                                       ),
-                                    if (productList.discount >= 1)
+                                    if (widget.productList.discount >= 1)
                                       Text(
                                         CurrencyFormat.convertToIdr(
-                                            productList.price -
-                                                (productList.discount / 100) *
-                                                    productList.price,
+                                            widget.productList.price -
+                                                (widget.productList.discount /
+                                                        100) *
+                                                    widget.productList.price,
                                             0),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18),
                                       ),
-                                    if (productList.discount >= 1)
+                                    if (widget.productList.discount >= 1)
                                       Row(
                                         children: [
                                           Text(
-                                            "${productList.discount}%  ",
+                                            "${widget.productList.discount}%  ",
                                             style: const TextStyle(
                                                 color: Colors.red,
                                                 fontWeight: FontWeight.w600),
                                           ),
                                           Text(
                                             CurrencyFormat.convertToIdr(
-                                                productList.price, 0),
+                                                widget.productList.price, 0),
                                             style: const TextStyle(
                                                 color: Colors.black38,
                                                 fontWeight: FontWeight.w600,
@@ -336,7 +357,7 @@ class Product extends StatelessWidget {
                                           )
                                         ],
                                       ),
-                                    Text("Stock : ${productList.stock}")
+                                    Text("Stock : ${widget.productList.stock}")
                                   ],
                                 ),
                               ),
@@ -388,7 +409,7 @@ class Product extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: _minCounter,
                               clipBehavior: Clip.antiAlias,
                               style: ElevatedButton.styleFrom(
                                 shadowColor: Colors.white,
@@ -398,20 +419,21 @@ class Product extends StatelessWidget {
                               ),
                               child: const Icon(Icons.remove),
                             ),
-                            const SizedBox(
-                              width: 50,
-                              height: 35,
-                              child: TextField(
-                                textAlign: TextAlign.center,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.black)),
-                                ),
-                              ),
-                            ),
+                            Text('${widget.productList.minbuy + counter} '),
+                            // const SizedBox(
+                            //   width: 50,
+                            //   height: 35,
+                            //   child: TextField(
+                            //     textAlign: TextAlign.center,
+                            //     decoration: InputDecoration(
+                            //       border: OutlineInputBorder(
+                            //           borderSide:
+                            //               BorderSide(color: Colors.black)),
+                            //     ),
+                            //   ),
+                            // ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: _incrementCounter,
                               clipBehavior: Clip.antiAlias,
                               style: ElevatedButton.styleFrom(
                                 shadowColor: Colors.white,
