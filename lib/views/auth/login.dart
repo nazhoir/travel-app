@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
                   const SizedBox(
                     height: 5,
                   ),
-                  Text("Masukkan Nomor Ponsel Kamu"),
+                  const Text("Masukkan Nomor Ponsel Kamu"),
                   const SizedBox(height: 35),
                   Row(
                     children: [

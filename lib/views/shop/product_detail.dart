@@ -13,6 +13,10 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
+  bool isKeayboard() {
+    return !(MediaQuery.of(context).viewInsets.bottom == 0.0);
+  }
+
   int counter = 0;
 
   void _minCounter() {
@@ -209,42 +213,77 @@ class _ProductState extends State<Product> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  clipBehavior: Clip.antiAlias,
-                  onPressed: _minCounter,
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.white,
-                    primary: Colors.amber[900],
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 10),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _minCounter,
+                      clipBehavior: Clip.antiAlias,
+                      style: ElevatedButton.styleFrom(
+                        shadowColor: Colors.white,
+                        primary: Colors.black,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 0, vertical: 0),
+                      ),
+                      child: const Icon(Icons.remove),
                     ),
-                  ),
-                  child: const Text("Beli Sekarang"),
-                ),
-                buildButton(
-                  styls: ElevatedButton.styleFrom(
-                    side: const BorderSide(color: Colors.amber),
-                    shadowColor: Colors.white,
-                    primary: Colors.amber,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 10),
-                  ),
-                  text: "Keranjang",
-                  onCLicked: () => showModalBottomSheet(
-                    isScrollControlled: true,
-                    backgroundColor: Colors.transparent,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(20),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
+                      width: 50,
+                      height: 35,
+                      child: TextField(
+                        controller: TextEditingController(
+                            text: "${widget.productList.minbuy + counter}"),
+                        textAlign: TextAlign.center,
+                        textAlignVertical: TextAlignVertical.center,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black)),
+                        ),
                       ),
                     ),
-                    context: context,
-                    builder: (context) => buildBottomSheet(context),
+                    ElevatedButton(
+                      onPressed: _incrementCounter,
+                      clipBehavior: Clip.antiAlias,
+                      style: ElevatedButton.styleFrom(
+                        shadowColor: Colors.white,
+                        primary: Colors.black,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 0, vertical: 0),
+                      ),
+                      child: const Icon(Icons.add),
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 35,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: Colors.amber[400],
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(5),
+                    ),
                   ),
+                  child: TextButton(
+                      onPressed: () => showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          context: context,
+                          builder: (context) => buildBottomSheet(context)),
+                      child: const Text(
+                        "+ KERANJANG",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
                 ),
               ],
             ),
@@ -401,71 +440,50 @@ class _ProductState extends State<Product> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 15, horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                              onPressed: _minCounter,
-                              clipBehavior: Clip.antiAlias,
-                              style: ElevatedButton.styleFrom(
-                                shadowColor: Colors.white,
-                                primary: Colors.black,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 0, vertical: 0),
-                              ),
-                              child: const Icon(Icons.remove),
+                    child: SizedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: _minCounter,
+                            clipBehavior: Clip.antiAlias,
+                            style: ElevatedButton.styleFrom(
+                              shadowColor: Colors.white,
+                              primary: Colors.black,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 0, vertical: 0),
                             ),
-                            Text('${widget.productList.minbuy + counter} '),
-                            // const SizedBox(
-                            //   width: 50,
-                            //   height: 35,
-                            //   child: TextField(
-                            //     textAlign: TextAlign.center,
-                            //     decoration: InputDecoration(
-                            //       border: OutlineInputBorder(
-                            //           borderSide:
-                            //               BorderSide(color: Colors.black)),
-                            //     ),
-                            //   ),
-                            // ),
-                            ElevatedButton(
-                              onPressed: _incrementCounter,
-                              clipBehavior: Clip.antiAlias,
-                              style: ElevatedButton.styleFrom(
-                                shadowColor: Colors.white,
-                                primary: Colors.black,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 0, vertical: 0),
-                              ),
-                              child: const Icon(Icons.add),
+                            child: const Icon(Icons.remove),
+                          ),
+                          Text(
+                            '${widget.productList.minbuy + counter} ',
+                          ),
+                          // const SizedBox(
+                          //   width: 50,
+                          //   height: 35,
+                          //   child: TextField(
+                          //     textAlign: TextAlign.center,
+                          //     decoration: InputDecoration(
+                          //       border: OutlineInputBorder(
+                          //           borderSide:
+                          //               BorderSide(color: Colors.black)),
+                          //     ),
+                          //   ),
+                          // ),
+                          ElevatedButton(
+                            onPressed: _incrementCounter,
+                            clipBehavior: Clip.antiAlias,
+                            style: ElevatedButton.styleFrom(
+                              shadowColor: Colors.white,
+                              primary: Colors.black,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 0, vertical: 0),
                             ),
-                          ],
-                        ),
-                        ElevatedButton.icon(
-                          icon: const Icon(
-                            Icons.add,
-                            color: Colors.amber,
-                            size: 14,
+                            child: const Icon(Icons.add),
                           ),
-                          label: const Text(
-                            "Keranjang",
-                            style: TextStyle(color: Colors.amber),
-                          ),
-                          clipBehavior: Clip.antiAlias,
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            side: const BorderSide(color: Colors.amber),
-                            shadowColor: Colors.white,
-                            primary: Colors.white,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 10),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
