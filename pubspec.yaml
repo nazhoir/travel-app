@@ -17,6 +17,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   supabase: ^0.3.4+1
   intl: ^0.17.0
+  country_code_picker: ^2.0.2
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +36,7 @@ flutter:
   
   assets:
   - images/
+
 
   # fonts:
   #   - family: Schyler

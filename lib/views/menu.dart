@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/views/auth/login.dart';
 
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({Key? key}) : super(key: key);
@@ -71,6 +72,18 @@ class NavigationDrawer extends StatelessWidget {
               leading: const Icon(Icons.info),
               title: const Text("Tentang"),
               onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.login),
+              title: const Text("Login"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Login(),
+                  ),
+                );
+              },
             ),
           ],
         ),

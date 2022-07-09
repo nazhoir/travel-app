@@ -65,8 +65,8 @@ class Transaksi extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                   color: Colors.green[400],
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(5))),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(5))),
                               child: const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
@@ -80,9 +80,10 @@ class Transaksi extends StatelessWidget {
                           if (transaksi.status == 2)
                             Container(
                               decoration: BoxDecoration(
-                                  color: Colors.amber[600],
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(5))),
+                                color: Colors.amber[600],
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(5)),
+                              ),
                               child: const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(

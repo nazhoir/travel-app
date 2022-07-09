@@ -21,16 +21,6 @@ class HomeScreen extends StatelessWidget {
           "TravelApps",
           style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w800),
         ),
-        // actions: <Widget>[
-        //   IconButton(
-        //     padding: const EdgeInsets.all(10),
-        //     icon: const Icon(Icons.search, color: Colors.black),
-        //     onPressed: () {
-        //       Navigator.of(context).push(
-        //           MaterialPageRoute(builder: (context) => const Search()));
-        //     },
-        //   ),
-        // ],
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
