@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/model/product_list.dart';
 import 'package:travel_app/views/currency.dart';
 import 'package:travel_app/views/shop/product_detail.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../menu.dart';
 
@@ -113,12 +114,24 @@ class Shop extends StatelessWidget {
                   },
                   child: Column(
                     children: [
-                      Image.network(
-                        product.image,
+                      CachedNetworkImage(
+                        imageUrl: product.image,
                         fit: BoxFit.cover,
                         height: 150,
                         width: 500,
+                        progressIndicatorBuilder:
+                            (context, url, downloadProgress) =>
+                                CircularProgressIndicator(
+                                    value: downloadProgress.progress),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
                       ),
+                      // Image.network(
+                      //   product.image,
+                      //   fit: BoxFit.cover,
+                      //   height: 150,
+                      //   width: 500,
+                      // ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(

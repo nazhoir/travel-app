@@ -330,81 +330,79 @@ class _ProductState extends State<Product> {
               children: [
                 const Center(child: Icon(Icons.horizontal_rule)),
                 ListTile(
-                  title: Container(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                              child: Image.network(
-                                widget.productList.image,
-                                width: 125,
-                                height: 125,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            SizedBox(
+                  title: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            child: Image.network(
+                              widget.productList.image,
+                              width: 125,
                               height: 125,
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    if (widget.productList.discount == 0)
-                                      Text(
-                                        CurrencyFormat.convertToIdr(
-                                            widget.productList.price, 0),
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 18),
-                                      ),
-                                    if (widget.productList.discount >= 1)
-                                      Text(
-                                        CurrencyFormat.convertToIdr(
-                                            widget.productList.price -
-                                                (widget.productList.discount /
-                                                        100) *
-                                                    widget.productList.price,
-                                            0),
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 18),
-                                      ),
-                                    if (widget.productList.discount >= 1)
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "${widget.productList.discount}%  ",
-                                            style: const TextStyle(
-                                                color: Colors.red,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          Text(
-                                            CurrencyFormat.convertToIdr(
-                                                widget.productList.price, 0),
-                                            style: const TextStyle(
-                                                color: Colors.black38,
-                                                fontWeight: FontWeight.w600,
-                                                decoration:
-                                                    TextDecoration.lineThrough),
-                                          )
-                                        ],
-                                      ),
-                                    Text("Stock : ${widget.productList.stock}")
-                                  ],
-                                ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 125,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if (widget.productList.discount == 0)
+                                    Text(
+                                      CurrencyFormat.convertToIdr(
+                                          widget.productList.price, 0),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18),
+                                    ),
+                                  if (widget.productList.discount >= 1)
+                                    Text(
+                                      CurrencyFormat.convertToIdr(
+                                          widget.productList.price -
+                                              (widget.productList.discount /
+                                                      100) *
+                                                  widget.productList.price,
+                                          0),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18),
+                                    ),
+                                  if (widget.productList.discount >= 1)
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "${widget.productList.discount}%  ",
+                                          style: const TextStyle(
+                                              color: Colors.red,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        Text(
+                                          CurrencyFormat.convertToIdr(
+                                              widget.productList.price, 0),
+                                          style: const TextStyle(
+                                              color: Colors.black38,
+                                              fontWeight: FontWeight.w600,
+                                              decoration:
+                                                  TextDecoration.lineThrough),
+                                        )
+                                      ],
+                                    ),
+                                  Text("Stock : ${widget.productList.stock}")
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   // minLeadingWidth: 125,
                   trailing: SizedBox(
